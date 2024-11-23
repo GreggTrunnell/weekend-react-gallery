@@ -10,7 +10,7 @@ router.put('/like/:id', (req, res) => {
 
 // GET /gallery
 
-router.get('/', (req, res) => {
+router.get('/gallery', (req, res) => {
   // code here
   console.log('router.get',response.data);
   const queryText=`SELECT * FROM gallery`

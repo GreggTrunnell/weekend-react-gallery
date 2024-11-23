@@ -3,6 +3,8 @@ const app = express();
 const gallery = require('./routes/gallery.router.js');
 const PORT = process.env.PORT || 5001;
 
+//?not sure if I need a parser or not
+
 /** ---------- MIDDLEWARE ---------- **/
 app.use(express.json());
 app.use(express.static('build'));
