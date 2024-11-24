@@ -35,13 +35,25 @@ function App() {
         </header>
         
         <p>The gallery goes here!</p>
+
+        <div>
+          {/* use the figure element to help group items */}
         {getImageList.map((image)=>(
-             <span key={image.id}> <br /> {image.url} <br /> {image.title} {image.likes} </span> 
+          <figure key={image.id}>
+            <img src={image.url}/>
+            <figcaption>
+              <h2>{image.title}</h2>
+              <p>{image.likes} Likes</p>
+            </figcaption>
+          </figure>
+        ))}
+       </div>
+        {/* {getImageList.map((image)=>(
+             <span key={image.id}> <br /><img src={image.url}/> <br /> {image.title} {image.likes} </span> 
           ))}
-          <br/>
+          <br/> */}
         <img src="images/goat_small.jpg"/>
         <img src="images/goat_stache.png"/>
-        
       </div>
     );
 }
