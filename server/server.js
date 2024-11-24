@@ -11,6 +11,19 @@ app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
 app.use('/api/gallery', gallery);
+// const galleryList=[{
+//   url: "url",
+//   title: "title",
+//   description: "description",
+//   likes: "likes",
+  
+// }]
+
+// app.use('/api/gallery', gallery);
+// app.get('/api/gallery', (req, res) => {
+//   console.log(`In /todos server GET`);
+//   res.send(galleryList);
+// });
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT,  () => {

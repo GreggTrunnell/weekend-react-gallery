@@ -33,10 +33,7 @@ function App() {
         <header>
           <h1>React Gallery</h1>
         </header>
-         
-
-       
-
+        
         <p>The gallery goes here!</p>
         {getImageList.map((image)=>(
              <span key={image.id}> <br /> {image.url} <br /> {image.title} {image.likes} </span> 
@@ -44,7 +41,7 @@ function App() {
           <br/>
         <img src="images/goat_small.jpg"/>
         <img src="images/goat_stache.png"/>
-        <img src="https://placecats.com/neo/300/200"/>
+        
       </div>
     );
 }
