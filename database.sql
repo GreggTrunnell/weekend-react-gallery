@@ -1,4 +1,4 @@
-CREATE TABLE "gallery" (
+CREATE TABLE gallery (
   "id" SERIAL PRIMARY KEY,
   "url" VARCHAR,
   "title" VARCHAR,

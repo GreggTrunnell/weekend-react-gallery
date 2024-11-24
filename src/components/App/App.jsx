@@ -1,10 +1,10 @@
+import React from 'react'
+import {useEffect,useState} from 'react';
 import axios from 'axios';
-import {useEffect,useState} from react;
-
 
 function App() {
   //need a useState function to retrieve the images and there current status
-  cosnt [getImageList, setImageList] = useState([]);
+  const [getImageList, setImageList] = useState([]);
 
   //need useEffect to render the list when the page loads
   useEffect(()=>{
@@ -13,6 +13,8 @@ function App() {
 
   //need a get request that will retrieve the data 
   const fetchImages = () => {
+    console.log('fetchImages')
+ 
     axios({
       method: "GET",
       url: "/api/gallery"
@@ -31,8 +33,15 @@ function App() {
         <header>
           <h1>React Gallery</h1>
         </header>
+         
+
+       
 
         <p>The gallery goes here!</p>
+        {getImageList.map((image)=>(
+             <span key={image.id}> <br /> {image.url} <br /> {image.title} {image.likes} </span> 
+          ))}
+          <br/>
         <img src="images/goat_small.jpg"/>
         <img src="images/goat_stache.png"/>
         <img src="https://placecats.com/neo/300/200"/>
