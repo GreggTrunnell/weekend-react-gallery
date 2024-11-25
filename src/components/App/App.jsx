@@ -1,6 +1,7 @@
 import React from 'react'
 import {useEffect,useState} from 'react';
 import axios from 'axios';
+// import likesCounter from './likesCounter/likesCounter';
 
 function App() {
   //need a useState function to retrieve the images and there current status
@@ -45,7 +46,6 @@ function App() {
         </header>
         
         <p>The gallery goes here!</p>
-
         <div>
           {/* use the figure element to help group items 
           might need to make adjustments to figcaption to get the 
@@ -55,8 +55,9 @@ function App() {
             <img src={image.url}/>
             <figcaption>
               <h2>{image.title}</h2>
-              <p>{image.likes} Likes</p>
-              <button onClick={addLike}>Added Like</button>
+              <p><button onClick={addLike}>Add Likes</button>{image.likes} Likes</p>
+              {/* <button onClick={addLike}>Add Likes</button> */}
+              
             </figcaption>
           </figure>
         ))}
