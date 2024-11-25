@@ -7,6 +7,7 @@ const pool = require('../modules/pool.js');
 // PUT /gallery/like/:id
 router.put('/like/:id', (req, res) => {
   // code here
+  const queryText=`UPDATE gallery` 
 });
 
 // GET /gallery
@@ -17,7 +18,7 @@ router.get('/', (req, res) => {
   //!This response here was caused an error in app.jsx GET
   //console.log('router.get',response);
   //?Removing the log allowed code to run properly
-  
+
   let queryText=
 'SELECT * FROM "gallery" ORDER BY "id";';
   pool.query(queryText)

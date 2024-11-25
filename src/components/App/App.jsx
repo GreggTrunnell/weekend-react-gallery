@@ -26,7 +26,17 @@ function App() {
     .catch((error)=>{
       console.log("error on get in app.jsx", error);
     });
+  };//!End of GET
+
+//function to add likes
+// function likeCounter(){
+  const [myLikes, setMyLikes]=useState(0)
+
+  const addLike=()=>{
+    setMyLikes(myLikes+1)
   }
+
+  
 
     return (
       <div data-testid="app">
@@ -37,25 +47,25 @@ function App() {
         <p>The gallery goes here!</p>
 
         <div>
-          {/* use the figure element to help group items */}
+          {/* use the figure element to help group items 
+          might need to make adjustments to figcaption to get the 
+          correct functionality*/}
         {getImageList.map((image)=>(
           <figure key={image.id}>
             <img src={image.url}/>
             <figcaption>
               <h2>{image.title}</h2>
               <p>{image.likes} Likes</p>
+              <button onClick={addLike}>Added Like</button>
             </figcaption>
           </figure>
         ))}
        </div>
-        {/* {getImageList.map((image)=>(
-             <span key={image.id}> <br /><img src={image.url}/> <br /> {image.title} {image.likes} </span> 
-          ))}
-          <br/> */}
+
         <img src="images/goat_small.jpg"/>
         <img src="images/goat_stache.png"/>
       </div>
     );
-}
+  }
 
 export default App;
